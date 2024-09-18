@@ -56,11 +56,11 @@ if __name__ == "__main__":
     # Read the wine-quality csv file from the URL
     data = pd.read_csv("red-wine-quality.csv")
     #os.mkdir("data/")
-    data.to_csv("data/red-wine-quality.csv", index=False)
+    #data.to_csv("data/red-wine-quality.csv", index=False)
     # Split the data into training and test sets. (0.75, 0.25) split.
     train, test = train_test_split(data)
-    train.to_csv("data/train.csv")
-    test.to_csv("data/test.csv")
+    train.to_csv("train.csv")
+    test.to_csv("test.csv")
     # The predicted column is "quality" which is a scalar from [3, 9]
     train_x = train.drop(["quality"], axis=1)
     test_x = test.drop(["quality"], axis=1)
@@ -70,7 +70,7 @@ if __name__ == "__main__":
     alpha = args.alpha
     l1_ratio = args.l1_ratio
 
-    mlflow.set_tracking_uri(uri="")
+    mlflow.set_tracking_uri(uri="http://localhost:5000")
 
     print("The set tracking uri is ", mlflow.get_tracking_uri())
     exp = mlflow.set_experiment(experiment_name="experiment_autolog_tracking")
