@@ -118,3 +118,4 @@ if __name__ == "__main__":
         print("The artifact path is", artifacts_uri)
         print("Active run id is {}".format(run.info.run_id))
         print("Active run name is {}".format(run.info.run_name))
+#git add Dockerfile docker-compose.yml .github/workflows/ci-cd.yml requirements.txt main.py
