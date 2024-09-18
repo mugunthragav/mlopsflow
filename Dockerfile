@@ -11,4 +11,4 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run main.py when the container launches
-CMD ["python", "src/main.py"]
+CMD ["python", "main.py","mlflow", "ui", "--host", "0.0.0.0", "--port", "5000"]
